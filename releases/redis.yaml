@@ -17,7 +17,7 @@ spec:
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: redis
-    version: 10.3.1
+    version: 10.3.2
   valueFileSecrets:
     # the redis-auth secret contains the password value
     - name: redis-auth
