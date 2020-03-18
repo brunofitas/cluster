@@ -5,6 +5,7 @@ metadata:
   name: ghost
   namespace: demo
   annotations:
+    flow_id: ghost
     fluxcd.io/automated: "false"
     fluxcd.io/tag.chart-image: glob:3.1.1-debian-9-*
 spec:
