@@ -7,11 +7,12 @@ kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/d
 kubectl create namespace flux || true
 
 # https://github.com/fluxcd/flux/tree/master/chart/flux
+
 helm upgrade -i flux fluxcd/flux \
 --set git.url=git@github.com:brunofitas/cluster \
 --set git.branch=master \
---set registry.automationInterval	1m \
---set prometheus.enabled	true \
+--set registry.automationInterval=1m \
+--set prometheus.enabled=true \
 --namespace flux
 
 helm upgrade -i helm-operator fluxcd/helm-operator \
