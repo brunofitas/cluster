@@ -14,19 +14,25 @@ helm upgrade -i flux fluxcd/flux \
 --set prometheus.enabled=true \
 --namespace flux
 
+sleep 10
+
 # deploy key to be pasted on github
 fluxctl identity --k8s-fwd-ns flux
+
+echo "Open https://github.com/brunofitas/cluster/settings/keys and create a new deploymnet key."
+echo "Press enter when ready"
+read input_variable
 
 
 helm upgrade -i helm-operator fluxcd/helm-operator \
 --set helm.versions=v3 \
 --set git.ssh.secretName=flux-git-deploy \
 --namespace flux
-
-
-# tell fluxctl the namespace where flux is installed
+#
+#
+## tell fluxctl the namespace where flux is installed
 export FLUX_FORWARD_NAMESPACE=flux
-
-# sync
+#
+## sync
 fluxctl sync
-
+#

@@ -5,7 +5,7 @@ metadata:
   name: redis
   namespace: demo
   labels:
-    my-label: test
+    my-label: gowithflow
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.chart-image: semver:~5.0
